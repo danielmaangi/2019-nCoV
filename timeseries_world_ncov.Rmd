@@ -1,0 +1,12 @@
+---
+title: "Automatically pull data from 2019-nCoV data from Johns Hopkins University Github Repository"
+output: html_notebook
+---
+
+
+Required Libraries
+```{r include=FALSE}
+library(tidyverse)
+```
+
+
