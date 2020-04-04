@@ -9,4 +9,31 @@ Required Libraries
 library(tidyverse)
 ```
 
+Confirmed Cases
+```{r Confirmed Cases, include=FALSE}
+ncov_confirmed_cases <- read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv") %>%
+  pivot_longer(-c(`Province/State`, `Country/Region`, Lat, Long),
+                  names_to = "date", values_to = "count")
+
+write_csv(ncov_confirmed_cases, "ncov_confirmed.csv")
+```
+
+
+Recovered Cases
+```{r Recovered Cases, include=FALSE}
+ncov_recovered <- read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv") %>%
+  pivot_longer(-c(`Province/State`, `Country/Region`, Lat, Long),
+                  names_to = "date", values_to = "count")
+
+write_csv(ncov_recovered, "ncov_recovered.csv")
+```
+
+Deaths
+```{r Recovered Cases, include=FALSE}
+ncov_deaths <- read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv") %>%
+  pivot_longer(-c(`Province/State`, `Country/Region`, Lat, Long),
+                  names_to = "date", values_to = "count")
+
+write_csv(ncov_deaths, "ncov_deaths.csv")
+```
 
